@@ -1,0 +1,8 @@
+FROM centos
+LABEL name=ujjwal
+env x=client1
+RUN yum install httpd -y
+COPY *.html /opt/
+COPY  multi.sh  /opt/
+EXPOSE 81
+ENTRYPOINT [ "/bin/bash","/opt/multi.sh" ]
